@@ -1,0 +1,110 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.Material.Light.Dialog.NoMinWidth" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMinor">0dip</item>
+        <item name="android:windowMinWidthMajor">0dip</item>
+    </style>
+
+    <style name="AuthorizeDialogTheme" parent="@android:style/Theme.Panel">
+        <item name="android:windowAnimationStyle">@style/AuthorizeDialogAnimation.Window</item>
+    </style>
+
+    <style name="AuthorizeDialogAnimation.Window" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <style name="BottomNavView" parent="Widget.Design.BottomNavigationView">
+        <item name="itemTextColor">@color/whiteColor</item>
+        <item name="itemIconTint">@color/bottom_nav_selector</item>
+        <item name="itemBackground">@color/primaryGrey</item>
+    </style>
+
+    <style name="BorderlessButton" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/secondaryGrey</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="TextStyles" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="LargeMetricStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/primaryGrey</item>
+        <item name="android:textSize">@dimen/XLargeTextSize</item>
+    </style>
+
+    <style name="PINTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textSize">@dimen/MLargeTextSize</item>
+    </style>
+
+    <style name="H1TextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/LargeTextSize</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/primaryButtonTextColor</item>
+        <item name="android:textSize">@dimen/LargeTextSize</item>
+    </style>
+
+    <style name="PrimaryTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/primaryGrey</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="PrimaryLightTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/secondaryGrey</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="InvertedPrimaryTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="DepositTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/depositGreen</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="LinkTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/linkColor</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="InvertedLinkTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/invertedLinkColor</item>
+        <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="SecondaryTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/primaryGrey</item>
+        <item name="android:textSize">@dimen/XSmallTextSize</item>
+    </style>
+
+    <style name="SecondaryLightTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/secondaryGrey</item>
+        <item name="android:textSize">@dimen/XSmallTextSize</item>
+    </style>
+
+    <style name="SecondaryInvertedTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textSize">@dimen/XSmallTextSize</item>
+    </style>
+
+    <style name="TileTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textSize">@dimen/XXSmallTextSize</item>
+    </style>
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryGrey">
+
+    <ImageView
+        android:id="@+id/close_authorization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="11.2dp"
+
+        android:src="@mipmap/ic_close"/>
+
+
+    <com.marc.nelnet.nelnetpayexperience.customviews.HorizontalDetailLabelView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/close_authorization"
+        app:layout_marginTopPercent="11%"
+        app:layout_widthPercent="93%"
+        app:hDetailsSecondaryText="Payment Amount"
+        app:hDetailsPrimaryText="$5.50"
+        />
+
+
+    <!--<TextView-->
+        <!--style="@style/SecondaryInvertedTextStyle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginTopPercent="11%"-->
+        <!--app:layout_widthPercent="93%"-->
+        <!--android:layout_below="@id/close_authorization"-->
+        <!--android:minHeight="40dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textAlignment="gravity"-->
+        <!--android:text="Payment Amount"/>-->
+
+    <!--<TextView-->
+        <!--style="@style/InvertedPrimaryTextStyle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginRight="11.2dp"-->
+        <!--android:layout_below="@id/close_authorization"-->
+        <!--android:minHeight="40dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textAlignment="gravity"-->
+        <!--android:text="$5.50" />-->
+
+</android.support.percent.PercentRelativeLayout>

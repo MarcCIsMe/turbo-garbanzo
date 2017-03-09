@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DetailsLabelView">
+        <attr name="detailsPrimaryText" format="string|reference" />
+        <attr name="detailsSecondaryText" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalDetailLabelView">
+        <attr name="hDetailsPrimaryText" format="string|reference" />
+        <attr name="hDetailsSecondaryText" format="string|reference" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:title="@string/menu_nav_home"
+        android:icon="@drawable/home_nav" />
+    <item android:id="@+id/action_student_id"
+        android:title="@string/menu_nav_student_id"
+        android:icon="@drawable/student_id_nav" />
+    <item android:id="@+id/action_pay"
+        android:title="@string/menu_nav_pay"
+        android:icon="@drawable/home_nav" />
+    <item android:id="@+id/action_more"
+        android:title="@string/menu_nav_ellipses"
+        android:icon="@drawable/elipsis_white" />
+</menu>

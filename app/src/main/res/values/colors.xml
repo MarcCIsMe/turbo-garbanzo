@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#004159</color>
+    <color name="colorPrimaryDark">#40004159</color>
+
+    <!-- Active Colors -->
+    <color name="activeColor">#F7900E</color>
+    <color name="activeDarkColor">#40F7900E</color>
+
+    <!-- Primary Button Colors -->
+    <color name="primaryButtonColor">#F7900E</color>
+    <color name="primaryButtonTextColor">#FFFFFF</color>
+
+    <color name="linkColor">#29A5DC</color>
+
+    <color name="colorAccent">#FF4081</color>
+    <color name="primaryGrey">#1A1A1A</color>
+    <color name="secondaryGrey">#999999</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="depositGreen">#39AF4A</color>
+    <color name="invertedLinkColor">#6AC6E5</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
