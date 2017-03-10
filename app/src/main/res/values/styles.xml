@@ -27,9 +27,15 @@
         <item name="itemBackground">@color/primaryGrey</item>
     </style>
 
-    <style name="BorderlessButton" parent="Base.Widget.AppCompat.Button.Borderless">
+    <style name="BorderlessButton" parent="android:Widget.Material.Button.Borderless">
         <item name="android:textColor">@color/secondaryGrey</item>
         <item name="android:textSize">@dimen/SmallTextSize</item>
+    </style>
+
+    <style name="AuthorizeButton" parent="android:ThemeOverlay.Material">
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textSize">@dimen/LargeTextSize</item>
+        <item name="android:backgroundTint">@color/authorizeButtonColor</item>
     </style>
 
     <style name="TextStyles" parent="TextAppearance.AppCompat">
@@ -49,6 +55,11 @@
 
     <style name="H1TextStyle" parent="@style/TextStyles">
         <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/LargeTextSize</item>
+    </style>
+
+    <style name="H1InvertedTextStyle" parent="@style/TextStyles">
+        <item name="android:textColor">@color/whiteColor</item>
         <item name="android:textSize">@dimen/LargeTextSize</item>
     </style>
 

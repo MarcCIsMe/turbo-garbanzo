@@ -9,10 +9,17 @@
     <string name="pay_card_current_sva_balance">Current SVA Balance</string>
     <string name="slide_up_to_pay">Slide up to pay</string>
 
-
     <!-- Bottom Nav View -->
     <string name="menu_nav_home">Home</string>
     <string name="menu_nav_student_id">Student ID</string>
     <string name="menu_nav_pay">Pay</string>
     <string name="menu_nav_ellipses">More</string>
+
+    <!-- Authorize Sheet -->
+    <string name="authorize_sheet_authorize">Authorize</string>
+    <string name="authorize_sheet_cancel">Cancel</string>
+    <string name="authorize_sheet_balance">New Campus Cash Balance</string>
+    <string name="authorize_sheet_pay_amount">Payment Amount</string>
+    <string name="authorize_sheet_success">Success!</string>
+
 </resources>

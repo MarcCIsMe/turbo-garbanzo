@@ -1,74 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false">
+    android:fitsSystemWindows="false">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:cropToPadding="true"
-        android:background="@drawable/pay_card_slot_background"/>
-
-    <ImageView
-        android:id="@+id/card_slot_top_cover"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="286dp"
-        android:layout_height="15dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/pay_card_slot_top_cover"
-        android:elevation="20dp">
-    </ImageView>
-    <ImageView
-        android:id="@+id/card_slot_top"
-        style="@style/CardView"
-        android:layout_width="286dp"
-        android:layout_height="5dp"
-        android:padding="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/pay_card_slot_top"
-        android:elevation="20dp">
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/card_slot_bottom"
-        style="@style/CardView"
-        android:layout_width="286dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/pay_card_slot_bottom"
-        android:elevation="0dp">
-    </ImageView>
-
-    <com.marc.nelnet.nelnetpayexperience.customviews.RippleRings
-        android:id="@+id/rings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:elevation="-1dp">
-    </com.marc.nelnet.nelnetpayexperience.customviews.RippleRings>
-
-    <Button
-        android:id="@+id/cancel_pay"
-        style="@style/BorderlessButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="150dp"
-        android:text="@string/pay_frag_cancel"/>
-
-    <com.marc.nelnet.nelnetpayexperience.customviews.CredentialCardView
-        android:id="@+id/payment_card"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="10dp"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false">
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cropToPadding="true"
+            android:background="@drawable/pay_card_slot_background"/>
+
+        <ImageView
+            android:id="@+id/card_slot_top_cover"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="286dp"
+            android:layout_height="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pay_card_slot_top_cover"
+            android:elevation="20dp">
+        </ImageView>
+        <ImageView
+            android:id="@+id/card_slot_top"
+            style="@style/CardView"
+            android:layout_width="286dp"
+            android:layout_height="5dp"
+            android:padding="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pay_card_slot_top"
+            android:elevation="20dp">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/card_slot_bottom"
+            style="@style/CardView"
+            android:layout_width="286dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pay_card_slot_bottom"
+            android:elevation="0dp">
+        </ImageView>
+
+        <com.marc.nelnet.nelnetpayexperience.customviews.RippleRings
+            android:id="@+id/rings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:elevation="-1dp">
+        </com.marc.nelnet.nelnetpayexperience.customviews.RippleRings>
+
+        <Button
+            android:id="@+id/cancel_pay"
+            style="@style/BorderlessButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="150dp"
+            android:text="@string/pay_frag_cancel"/>
+
+        <com.marc.nelnet.nelnetpayexperience.customviews.CredentialCardView
+            android:id="@+id/payment_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:clipToPadding="false"/>
+    </RelativeLayout>
+
+
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/bottom_sheet"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.marc.nelnet.nelnetpayexperience.AuthorizationSheetBehavior">
+
+            <include layout="@layout/authorization_panel"/>
+        </android.support.percent.PercentRelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

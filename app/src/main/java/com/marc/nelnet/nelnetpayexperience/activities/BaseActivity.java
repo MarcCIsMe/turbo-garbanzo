@@ -32,7 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         supportActionBar.setDisplayShowCustomEnabled(true);
         supportActionBar.setDisplayShowTitleEnabled(false);
         supportActionBar.setDisplayHomeAsUpEnabled(true);
-        supportActionBar.setIcon(R.color.transparent);
+        supportActionBar.setIcon(android.R.color.transparent);
         supportActionBar.setHomeButtonEnabled(true);
     }
 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <android.support.percent.PercentRelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/primaryGrey"
+        android:visibility="visible"
+        app:layout_heightPercent="78%"
+        >
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/auth_success"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primaryGrey"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:id="@+id/success_circle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/success_image"
+                app:layout_marginTopPercent="11%"/>
+            <TextView
+                android:id="@+id/success_text"
+                style="@style/InvertedPrimaryTextStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/success_circle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="31dp"
+                android:text="Success!"
+                />
+        </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/auth_pay_details"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryGrey"
+        android:visibility="visible"
+        >
+            <ImageView
+                android:id="@+id/close_authorization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="11.2dp"
+                android:layout_marginTop="11.2dp"
+                android:src="@mipmap/ic_close"/>
+
+            <ImageView
+                android:id="@+id/horizontal_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/close_authorization"
+                android:layout_centerHorizontal="true"
+                android:background="@color/whiteColor"
+                app:layout_marginTopPercent="11%"
+                app:layout_widthPercent="93%"/>
+
+            <com.marc.nelnet.nelnetpayexperience.customviews.HorizontalDetailLabelView
+                android:id="@+id/payment_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/horizontal_line1"
+                app:layout_widthPercent="93%"
+                app:hDetailsSecondaryText="@string/authorize_sheet_pay_amount"
+                app:hDetailsPrimaryText="$5.50"
+                />
+
+            <ImageView
+                android:id="@+id/horizontal_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/payment_amount"
+                android:layout_centerHorizontal="true"
+                android:background="@color/whiteColor"
+                app:layout_widthPercent="93%"/>
+
+            <com.marc.nelnet.nelnetpayexperience.customviews.HorizontalDetailLabelView
+                android:id="@+id/balance_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/horizontal_line2"
+                app:layout_widthPercent="93%"
+                app:hDetailsSecondaryText="@string/authorize_sheet_balance"
+                app:hDetailsPrimaryText="$14.50"
+                />
+
+            <ImageView
+                android:id="@+id/horizontal_line3"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/balance_amount"
+                android:layout_centerHorizontal="true"
+                android:background="@color/whiteColor"
+                app:layout_widthPercent="93%"/>
+
+            <Button
+                android:id="@+id/cancel_authorization"
+                style="@style/BorderlessButton"
+                android:textSize="@dimen/SmallTextSize"
+                android:textColor="@color/secondaryGrey"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_below="@id/horizontal_line3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/authorize_sheet_cancel"
+                app:layout_marginTopPercent="3%"
+                />
+
+            <Button
+                android:id="@+id/authorize_button"
+                android:theme="@style/AuthorizeButton"
+                android:layout_height="59dp"
+                android:layout_width="match_parent"
+                android:layout_below="@id/cancel_authorization"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/authorize_sheet_authorize"
+                app:layout_marginTopPercent="6%"
+                app:layout_marginBottomPercent="12%" />
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</merge>
