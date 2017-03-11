@@ -8,7 +8,7 @@
         android:icon="@drawable/student_id_nav" />
     <item android:id="@+id/action_pay"
         android:title="@string/menu_nav_pay"
-        android:icon="@drawable/home_nav" />
+        android:icon="@drawable/pay_nav" />
     <item android:id="@+id/action_more"
         android:title="@string/menu_nav_ellipses"
         android:icon="@drawable/elipsis_white" />

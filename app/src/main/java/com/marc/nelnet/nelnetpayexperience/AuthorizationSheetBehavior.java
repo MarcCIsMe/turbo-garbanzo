@@ -24,7 +24,7 @@ public class AuthorizationSheetBehavior<V extends View> extends BottomSheetBehav
 
     @Override
     public boolean onTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) {
-        boolean rVal = false;
+        boolean rVal = true;
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_SCROLL:

@@ -3,6 +3,7 @@
 
     <!-- Pay Fragment -->
     <string name="pay_frag_cancel">Cancel</string>
+    <string name="pay_frag_scan_qr_code">or Scan QR Code</string>
 
     <!-- Pay Card -->
     <string name="pay_card_student">Student</string>
@@ -21,5 +22,8 @@
     <string name="authorize_sheet_balance">New Campus Cash Balance</string>
     <string name="authorize_sheet_pay_amount">Payment Amount</string>
     <string name="authorize_sheet_success">Success!</string>
+
+    <!-- Permissions -->
+    <string name="qr_code_rationale_message">The app needs permission to use your camera to read QR codes.</string>
 
 </resources>
