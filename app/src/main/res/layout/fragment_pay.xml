@@ -107,7 +107,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="com.marc.nelnet.nelnetpayexperience.AuthorizationSheetBehavior"
+        app:layout_behavior="com.marc.nelnet.nelnetpayexperience.utils.AuthorizationSheetBehavior"
         android:visibility="visible">
 
         <include layout="@layout/authorization_panel"/>
