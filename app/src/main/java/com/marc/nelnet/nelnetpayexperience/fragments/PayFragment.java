@@ -2,11 +2,7 @@ package com.marc.nelnet.nelnetpayexperience.fragments;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Outline;
-import android.graphics.Paint;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -14,13 +10,10 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.percent.PercentRelativeLayout;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import android.text.style.TextAppearanceSpan;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import android.view.View;
@@ -31,16 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.vision.Frame;
-import com.google.android.gms.vision.barcode.Barcode;
-import com.google.android.gms.vision.barcode.BarcodeDetector;
-import com.marc.nelnet.nelnetpayexperience.AuthorizationSheetBehavior;
-import com.marc.nelnet.nelnetpayexperience.QRCamera;
+import com.marc.nelnet.nelnetpayexperience.utils.AuthorizationSheetBehavior;
+import com.marc.nelnet.nelnetpayexperience.utils.QRCamera;
 import com.marc.nelnet.nelnetpayexperience.R;
 import com.marc.nelnet.nelnetpayexperience.customviews.CredentialCardView;
-import com.marc.nelnet.nelnetpayexperience.customviews.RippleRings;
-
-import java.util.Date;
+import com.marc.nelnet.nelnetpayexperience.customviews.RingRippleController;
 
 import static android.view.View.GONE;
 
@@ -50,7 +38,7 @@ import static android.view.View.GONE;
 
 public class PayFragment extends BaseFragment implements CredentialCardView.CredentialCardViewListener, QRCamera.QRCameraListener {
     private CredentialCardView mCredentialCardView;
-    private RippleRings mRings;
+    private RingRippleController mRings;
     private Button mCancelButton;
     private PercentRelativeLayout mAuthorizeView;
     private Handler mAwaitingAuthSheetHandler;
@@ -108,7 +96,7 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
 
         initializeCredentialCard();
         mMainLayout = getActivity().findViewById(R.id.main_layout);
-        mRings = (RippleRings)getActivity().findViewById(R.id.rings);
+        mRings = (RingRippleController)getActivity().findViewById(R.id.rings);
         mAuthorizeView = (PercentRelativeLayout)getActivity().findViewById(R.id.bottom_sheet);
         mPayDetailsView = mAuthorizeView.findViewById(R.id.auth_pay_details);
         mSuccessView = mAuthorizeView.findViewById(R.id.auth_success);

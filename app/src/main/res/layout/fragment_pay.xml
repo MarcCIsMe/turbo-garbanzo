@@ -37,6 +37,7 @@
             android:background="@drawable/pay_card_slot_top_cover"
             android:elevation="20dp">
         </ImageView>
+
         <ImageView
             android:id="@+id/card_slot_top"
             style="@style/CardView"
@@ -60,13 +61,13 @@
             android:elevation="0dp">
         </ImageView>
 
-        <com.marc.nelnet.nelnetpayexperience.customviews.RippleRings
+        <com.marc.nelnet.nelnetpayexperience.customviews.RingRippleController
             android:id="@+id/rings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:elevation="-1dp">
-        </com.marc.nelnet.nelnetpayexperience.customviews.RippleRings>
+        </com.marc.nelnet.nelnetpayexperience.customviews.RingRippleController>
 
         <Button
             android:id="@+id/cancel_pay"
@@ -100,18 +101,17 @@
 
     </RelativeLayout>
 
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/bottom_sheet"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.marc.nelnet.nelnetpayexperience.AuthorizationSheetBehavior"
+        android:visibility="visible">
 
+        <include layout="@layout/authorization_panel"/>
 
-        <android.support.percent.PercentRelativeLayout
-            android:id="@+id/bottom_sheet"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="com.marc.nelnet.nelnetpayexperience.AuthorizationSheetBehavior"
-            android:visibility="visible">
-
-            <include layout="@layout/authorization_panel"/>
-        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

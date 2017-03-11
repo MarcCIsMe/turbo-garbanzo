@@ -20,7 +20,7 @@ import com.marc.nelnet.nelnetpayexperience.R;
 /**
  * Created by Marc on 3/9/2017.
  */
-
+// Being used in XML layout in Pay_Fragment
 public class AuthorizePayDialogFragment extends DialogFragment {
 
     public static AuthorizePayDialogFragment newInstance() {
@@ -32,17 +32,13 @@ public class AuthorizePayDialogFragment extends DialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         getDialog().getWindow().getAttributes().windowAnimations = R.style.AuthorizeDialogAnimation_Window;
-////        getDialog().getWindow().getAttributes().width = getActivity().getWindow().getWindowManager().getDefaultDisplay().getWidth();
         Window window = getDialog().getWindow();
         WindowManager.LayoutParams attributes = window.getAttributes();
         //must setBackgroundDrawable(TRANSPARENT) in onActivityCreated()
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if (true)
-        {
-            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-            attributes.height = 400;
-            window.setAttributes(attributes);
-        }
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        attributes.height = 400;
+        window.setAttributes(attributes);
     }
 
     @NonNull
@@ -56,24 +52,4 @@ public class AuthorizePayDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.dialog_fragment_authorize_pay, container, true);
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-//        Dialog dialog = getDialog();
-//        if (dialog != null)
-//        {
-//            int width = ViewGroup.LayoutParams.MATCH_PARENT;
-//            int height = ViewGroup.LayoutParams.MATCH_PARENT;
-//            dialog.getWindow().setLayout(width, height);
-//            dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        }
-    }
-
-    //    @NonNull
-//    @Override
-//    public Dialog onCreateDialog(Bundle savedInstanceState) {
-//        AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
-//                .
-//    }
 }

@@ -1,7 +1,6 @@
 package com.marc.nelnet.nelnetpayexperience.customviews;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -17,7 +16,7 @@ import com.marc.nelnet.nelnetpayexperience.R;
  * Created by Marc on 3/8/2017.
  */
 
-public class RippleRings extends RelativeLayout {
+public class RingRippleController extends RelativeLayout {
 
     private Context mContext;
     private View mView;
@@ -25,12 +24,12 @@ public class RippleRings extends RelativeLayout {
     private ImageView ring2;
     private ImageView ring3;
 
-    public RippleRings(Context context, @Nullable AttributeSet attrs) {
+    public RingRippleController(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initialize(context, attrs);
     }
 
-    public RippleRings(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RingRippleController(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialize(context, attrs);
     }

@@ -1,4 +1,4 @@
-package com.marc.nelnet.nelnetpayexperience;
+package com.marc.nelnet.nelnetpayexperience.utils;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,6 +14,7 @@ import android.view.View;
 
 public class AuthorizationSheetBehavior<V extends View> extends BottomSheetBehavior<V> {
 
+    // Constructors are necessary. Do not delete.
     public AuthorizationSheetBehavior() {
         super();
     }

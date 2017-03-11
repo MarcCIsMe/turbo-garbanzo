@@ -20,7 +20,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void setActionBarStyle() {
         final ActionBar supportActionBar = getSupportActionBar();
-        //supportActionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background, R.style.AppTheme));
         View viewActionBar = getLayoutInflater().inflate(R.layout.action_bar_layout, null);
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(
                 ActionBar.LayoutParams.WRAP_CONTENT,

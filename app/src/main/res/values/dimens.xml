@@ -14,7 +14,6 @@
     <!-- Card Dimensions -->
     <dimen name="card_logo_padding">10dp</dimen>
 
-
     <!-- Ripple Ring Dimensions -->
     <dimen name="ring_top_margin">150dp</dimen>
 </resources>

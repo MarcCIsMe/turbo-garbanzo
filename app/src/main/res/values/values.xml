@@ -3,12 +3,9 @@
 
     <integer name="alphaFadeDuration">300</integer>
 
-
     <!-- Concentric Ring Values -->
     <integer name="ring1DelayedStart">1</integer>
     <integer name="ring2DelayedStart">100</integer>
     <integer name="ring3DelayedStart">210</integer>
-
-
 
 </resources>

@@ -26,32 +26,4 @@
         app:hDetailsSecondaryText="Payment Amount"
         app:hDetailsPrimaryText="$5.50"
         />
-
-
-    <!--<TextView-->
-        <!--style="@style/SecondaryInvertedTextStyle"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_marginTopPercent="11%"-->
-        <!--app:layout_widthPercent="93%"-->
-        <!--android:layout_below="@id/close_authorization"-->
-        <!--android:minHeight="40dp"-->
-        <!--android:gravity="center"-->
-        <!--android:textAlignment="gravity"-->
-        <!--android:text="Payment Amount"/>-->
-
-    <!--<TextView-->
-        <!--style="@style/InvertedPrimaryTextStyle"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_marginRight="11.2dp"-->
-        <!--android:layout_below="@id/close_authorization"-->
-        <!--android:minHeight="40dp"-->
-        <!--android:gravity="center"-->
-        <!--android:textAlignment="gravity"-->
-        <!--android:text="$5.50" />-->
-
 </android.support.percent.PercentRelativeLayout>

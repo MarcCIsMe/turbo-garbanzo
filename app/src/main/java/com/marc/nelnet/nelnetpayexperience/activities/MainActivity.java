@@ -4,27 +4,19 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.graphics.Outline;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewOutlineProvider;
 
-import com.marc.nelnet.nelnetpayexperience.QRCamera;
+
 import com.marc.nelnet.nelnetpayexperience.R;
-import com.marc.nelnet.nelnetpayexperience.customviews.CredentialCardView;
-import com.marc.nelnet.nelnetpayexperience.customviews.RippleRings;
-import com.marc.nelnet.nelnetpayexperience.fragments.AuthorizePayDialogFragment;
 import com.marc.nelnet.nelnetpayexperience.fragments.BaseFragment;
 import com.marc.nelnet.nelnetpayexperience.fragments.PayFragment;
 
-import static com.marc.nelnet.nelnetpayexperience.QRCamera.CAMERA_REQUEST_CODE;
+import static com.marc.nelnet.nelnetpayexperience.utils.QRCamera.CAMERA_REQUEST_CODE;
 
 /**
  * Created by Marc on 3/8/2017.
@@ -65,7 +57,7 @@ public class MainActivity extends BaseActivity {
         ft.replace(R.id.fragment, mCurrentFragment);
         ft.commit();
         setActionBarStyle();
-//        bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        bottomNavigationView.getMenu().getItem(2).setChecked(true);
     }
 
     @Override
