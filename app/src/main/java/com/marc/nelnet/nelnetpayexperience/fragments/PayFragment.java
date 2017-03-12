@@ -3,6 +3,7 @@ package com.marc.nelnet.nelnetpayexperience.fragments;
 import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Outline;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -51,20 +52,11 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
     private SurfaceView mQRSurfaceView;
     private View mMainLayout;
     private boolean mCardInserted = false;
+    private AuthorizationSheetBehavior mBottomSheetBehavior;
 
     public static PayFragment newInstance() {
         PayFragment fragment = new PayFragment();
         return fragment;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Nullable
@@ -101,12 +93,44 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
         mPayDetailsView = mAuthorizeView.findViewById(R.id.auth_pay_details);
         mSuccessView = mAuthorizeView.findViewById(R.id.auth_success);
         mQRSurfaceView = (SurfaceView)getActivity().findViewById(R.id.qr_camera_view);
+        setupAuthorizeButton();
+        setupAuthorizeSheetBehavior();
+        setupCancelButton();
 
-        final AuthorizationSheetBehavior bottomSheetBehavior = (AuthorizationSheetBehavior)BottomSheetBehavior.from(mAuthorizeView);
-        bottomSheetBehavior.setPeekHeight(0);
-        bottomSheetBehavior.setHideable(false);
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        View.OnClickListener closeClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCardInserted = false;
+                showAuthorizationSheet(false);
+                mCredentialCardView.resetCard();
+                mQRSurfaceView.setVisibility(GONE);
+            }
+        };
+        mAuthXButton = (ImageView)mAuthorizeView.findViewById(R.id.close_authorization);
+        mAuthXButton.setOnClickListener(closeClickListener);
+        mAuthCancelButton = (Button)mAuthorizeView.findViewById(R.id.cancel_authorization);
+        mAuthCancelButton.setOnClickListener(closeClickListener);
+        setupScanQRCodeButton();
 
+    }
+
+    private SpannableStringBuilder buildQRSpanString() {
+        SpannableStringBuilder builder = new SpannableStringBuilder(getResources().getString(R.string.pay_frag_scan_qr_code));
+        builder.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.secondaryGrey)), 0, 2, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        builder.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.linkColor, null)), 3, builder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        builder.setSpan(new StyleSpan(R.style.SecondaryLightTextStyle), 0, 2, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+        builder.setSpan(new StyleSpan(R.style.LinkTextStyle), 3, builder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        return builder;
+    }
+
+    private void setupAuthorizeSheetBehavior() {
+        mBottomSheetBehavior = (AuthorizationSheetBehavior)BottomSheetBehavior.from(mAuthorizeView);
+        mBottomSheetBehavior.setPeekHeight(0);
+        mBottomSheetBehavior.setHideable(false);
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+    }
+
+    private void setupAuthorizeButton() {
         mAuthorizeButton = (Button)mAuthorizeView.findViewById(R.id.authorize_button);
         mAuthorizeButton.setClickable(true);
         mAuthorizeButton.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +140,9 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
                 showSuccess(true);
             }
         });
+    }
 
+    private void setupCancelButton() {
         mCancelButton = (Button)getActivity().findViewById(R.id.cancel_pay);
         mCancelButton.setAlpha(0);
         mCancelButton.setOnClickListener(new View.OnClickListener() {
@@ -130,25 +156,12 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
                 animateAlpha(mCancelButton, 0, getResources().getInteger(R.integer.alphaFadeDuration));
                 animateAlpha(mRings, 0, getResources().getInteger(R.integer.alphaFadeDuration));
                 mCredentialCardView.resetCard();
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
             }
         });
-        View.OnClickListener closeClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCardInserted = false;
-                showAuthorizationSheet(false);
-                mCredentialCardView.resetCard();
-                mQRSurfaceView.setVisibility(GONE);
-            }
-        };
+    }
 
-        mAuthXButton = (ImageView)mAuthorizeView.findViewById(R.id.close_authorization);
-        mAuthXButton.setOnClickListener(closeClickListener);
-
-        mAuthCancelButton = (Button)mAuthorizeView.findViewById(R.id.cancel_authorization);
-        mAuthCancelButton.setOnClickListener(closeClickListener);
-
+    private void setupScanQRCodeButton() {
         TextView scanQRCode = (TextView)getActivity().findViewById(R.id.scan_qr_code);
         scanQRCode.setText(buildQRSpanString());
         scanQRCode.setOnClickListener(new View.OnClickListener() {
@@ -160,15 +173,6 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
                 }
             }
         });
-    }
-
-    private SpannableStringBuilder buildQRSpanString() {
-        SpannableStringBuilder builder = new SpannableStringBuilder(getResources().getString(R.string.pay_frag_scan_qr_code));
-        builder.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.secondaryGrey)), 0, 2, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        builder.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.linkColor, null)), 3, builder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-        builder.setSpan(new StyleSpan(R.style.SecondaryLightTextStyle), 0, 2, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-        builder.setSpan(new StyleSpan(R.style.LinkTextStyle), 3, builder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-        return builder;
     }
 
     @Override
@@ -220,6 +224,8 @@ public class PayFragment extends BaseFragment implements CredentialCardView.Cred
         int state;
         mBottomSheetUp = show;
         if(show) {
+            final MediaPlayer mp = MediaPlayer.create(getActivity(), R.raw.info_received);
+            mp.start();
             state = BottomSheetBehavior.STATE_EXPANDED;
             mPayDetailsView.setAlpha(1);
             mSuccessView.setAlpha(0);

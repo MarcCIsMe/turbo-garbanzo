@@ -27,7 +27,7 @@
         <item name="android:textColor">@color/secondaryGrey</item>
         <item name="android:textSize">@dimen/SmallTextSize</item>
     </style>
-
+Z
     <style name="AuthorizeButton" parent="android:ThemeOverlay.Material">
         <item name="android:textColor">@color/whiteColor</item>
         <item name="android:textSize">@dimen/LargeTextSize</item>
